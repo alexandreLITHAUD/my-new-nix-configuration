@@ -19,6 +19,7 @@ cp /etc/nixos/* ./hosts/<your_hostname>
 - Edit the flake.nix :
 
 ```
+...
   outputs = { self, nixpkgs, home-manager, ... }@inputs: let
     system = "x86_64-linux";
 --  homeStateVersion = "25.05";
@@ -30,6 +31,7 @@ cp /etc/nixos/* ./hosts/<your_hostname>
 --    { hostname = "test2"; stateVersion = "24.11"; }
 ++    { hostname = "<your_hostname>"; stateVersion = "<your_state_version>"; }
     ];
+...
 ```
 
 - Rebuild the system :
