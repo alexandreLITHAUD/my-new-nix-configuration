@@ -41,5 +41,5 @@ cd nixos-config-reborn
 git add .
 nixos-rebuild switch --flake ./#<hostname>
 # or nixos-install --flake ./#<hostname> if you are installing on a fresh system
-home-manager switch
+home-manager switch --flake ./#<username>
 ```
