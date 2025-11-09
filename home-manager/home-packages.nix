@@ -2,6 +2,14 @@
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
+
+    # Main packages
+    zsh
+    tmux
+    neovim
+    git
+    kitty
+
     # Browser
     firefox
 
@@ -23,7 +31,7 @@
     # Cryptography
     sops
     age
-    gnugpg
+    gnupg
 
     # Utils
     curl
@@ -37,7 +45,7 @@
     pinentry-all
     ripgrep
     htop
-    yt-dpl
+    yt-dlp
     
     # Languages
     ## Python
