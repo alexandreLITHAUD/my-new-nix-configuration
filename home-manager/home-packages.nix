@@ -46,7 +46,6 @@
     ripgrep
     htop
     yt-dlp
-    toybox
     
     # Languages
     ## Python
