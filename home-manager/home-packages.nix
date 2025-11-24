@@ -28,6 +28,9 @@
     helmfile
     k9s
 
+    # IaC
+    terraform
+
     # Cryptography
     sops
     age
