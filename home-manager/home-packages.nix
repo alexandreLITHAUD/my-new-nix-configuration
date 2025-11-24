@@ -46,6 +46,7 @@
     ripgrep
     htop
     yt-dlp
+    fd
     
     # Languages
     ## Python
