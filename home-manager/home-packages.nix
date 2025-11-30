@@ -15,11 +15,13 @@
 
     # Editor
     vim
-    
+
     # Git Tools
     tig
     delta
     meld
+    lazygit
+    gh
 
     # Kube
     kubectl
@@ -50,7 +52,7 @@
     htop
     yt-dlp
     fd
-    
+
     # Languages
     ## Python
     python314

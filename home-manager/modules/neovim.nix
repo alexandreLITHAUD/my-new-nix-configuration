@@ -1,4 +1,15 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
+
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
+
+  home.file.".config/nvim" = {
+    source = inputs.neovim-config;
+    recursive = true;
+  };
+
   home.packages = with pkgs; [
 
     # LSP servers
