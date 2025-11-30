@@ -18,7 +18,7 @@
     black # Python
     stylua # Lua
     nodePackages.prettier # JS/TS/Web
-    # goimports # Go
+    gotools # gofumpt, goimports for Go
     shfmt # Shell
     clang-tools # clang-format
     yamlfmt # YAML
