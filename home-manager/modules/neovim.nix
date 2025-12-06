@@ -10,7 +10,7 @@
     nodePackages.bash-language-server # bashls
     pyright # Python
     yaml-language-server # yamlls
-    dockerfile-language-server-nodejs # dockerls
+    dockerfile-language-server # dockerls
     terraform-ls # terraformls
     nil # nil_ls for Nix
 
