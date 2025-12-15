@@ -52,16 +52,17 @@
     htop
     yt-dlp
     fd
+    devbox
 
     # Languages
     ## Python
-    python314
+    python315
     ## Go
     go
     ## C / C++
     gcc
     ## Javascript
-    nodejs_22
+    nodejs_24
     ## Rust
     rustc
     cargo
