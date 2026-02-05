@@ -53,6 +53,9 @@
     fd
     devbox
 
+    # Virtualizer
+    qemu
+
     # Languages
     ## Python
     python315

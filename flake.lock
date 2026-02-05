@@ -21,6 +21,22 @@
         "type": "github"
       }
     },
+    "neovim-config": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1765531012,
+        "narHash": "sha256-+gROdOM6UJRdekbvLS2Kh/8vPjbxXiB1250jkBbWnuw=",
+        "owner": "alexandreLITHAUD",
+        "repo": "my-nvim-config",
+        "rev": "c83fa1c016c69e100506de1c03d1d7e63f4085f1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "alexandreLITHAUD",
+        "repo": "my-nvim-config",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1764831616,
@@ -40,6 +56,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
+        "neovim-config": "neovim-config",
         "nixpkgs": "nixpkgs"
       }
     }
