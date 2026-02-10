@@ -27,15 +27,13 @@
         stateVersion = "25.05";
       }];
 
+      pkgs-unstable = nixpkgs-unstable.legacyPackages.${system};
+
       makeSystem = { hostname, stateVersion }:
         nixpkgs.lib.nixosSystem {
           system = system;
           specialArgs = { 
-            inherit inputs stateVersion hostname user; 
-            pkgs-unstable = import nixpkgs-unstable {
-              inherit system;
-              config.allowUnfree = true;
-            };
+            inherit inputs stateVersion hostname user pkgs-unstable; 
           };
 
           modules = [ ./hosts/${hostname}/configuration.nix ];
@@ -55,11 +53,7 @@
       homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
         extraSpecialArgs = { 
-          inherit inputs homeStateVersion user; 
-          pkgs-unstable = import nixpkgs-unstable {
-            inherit system;
-            config.allowUnfree = true;
-          };
+          inherit inputs homeStateVersion user pkgs-unstable; 
         };
         modules = [ ./home-manager/home.nix ];
       };
