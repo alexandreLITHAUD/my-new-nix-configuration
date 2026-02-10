@@ -4,6 +4,7 @@
   inputs = {
 
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-unstable = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-25.11";
@@ -16,7 +17,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, ... }@inputs:
     let
       system = "x86_64-linux";
       homeStateVersion = "25.05";
@@ -29,7 +30,13 @@
       makeSystem = { hostname, stateVersion }:
         nixpkgs.lib.nixosSystem {
           system = system;
-          specialArgs = { inherit inputs stateVersion hostname user; };
+          specialArgs = { 
+            inherit inputs stateVersion hostname user; 
+            pkgs-unstable = import nixpkgs-unstable {
+              inherit system;
+              config.allowUnfree = true;
+            };
+          };
 
           modules = [ ./hosts/${hostname}/configuration.nix ];
         };
@@ -47,8 +54,13 @@
 
       homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.${system};
-        extraSpecialArgs = { inherit inputs homeStateVersion user; };
-
+        extraSpecialArgs = { 
+          inherit inputs homeStateVersion user; 
+          pkgs-unstable = import nixpkgs-unstable {
+            inherit system;
+            config.allowUnfree = true;
+          };
+        };
         modules = [ ./home-manager/home.nix ];
       };
     };

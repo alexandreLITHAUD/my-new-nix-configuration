@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, pkgs-unstable, ... }: {
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
@@ -68,5 +68,8 @@
     ## Rust
     rustc
     cargo
-  ];
+  ] ++ (with pkgs-unstable; [
+    # Unstable packages
+    godot
+  ]);
 }
