@@ -1,75 +1,80 @@
 { pkgs, pkgs-unstable, ... }: {
   nixpkgs.config.allowUnfree = true;
 
-  home.packages = with pkgs; [
+  home.packages = with pkgs;
+    [
 
-    # Main packages
-    zsh
-    tmux
-    git
-    kitty
+      # Main packages
+      zsh
+      tmux
+      git
+      kitty
 
-    # Browser
-    firefox
+      # Applications
+      spotify
 
-    # Editor
-    vim
+      # Browser
+      firefox
 
-    # Git Tools
-    tig
-    delta
-    meld
-    lazygit
-    gh
+      # Editor
+      vim
 
-    # Kube
-    kubectl
-    kubeswitch
-    helm
-    helmfile
-    k9s
+      # Git Tools
+      tig
+      delta
+      meld
+      lazygit
+      gh
 
-    # IaC
-    terraform
+      # Kube
+      kubectl
+      kubeswitch
+      helm
+      helmfile
+      k9s
 
-    # Cryptography
-    sops
-    age
-    gnupg
+      # IaC
+      terraform
 
-    # Utils
-    curl
-    wget
-    gparted
-    jump
-    htop
-    tree
-    fzf
-    unzip
-    pinentry-all
-    ripgrep
-    htop
-    yt-dlp
-    fd
-    devbox
+      # Cryptography
+      sops
+      age
+      gnupg
 
-    # Virtualizer
-    qemu
+      # Utils
+      curl
+      wget
+      gparted
+      jump
+      htop
+      tree
+      fzf
+      unzip
+      pinentry-all
+      ripgrep
+      htop
+      yt-dlp
+      fd
+      devbox
 
-    # Languages
-    ## Python
-    python315
-    ## Go
-    go
-    ## C / C++
-    gcc
-    ## Javascript
-    nodejs_24
-    ## Rust
-    rustc
-    cargo
-  ] ++ (with pkgs-unstable; [
-    # Unstable packages
-    godot
-  ]);
+      # Virtualizer
+      qemu
+
+      # Languages
+      ## Python
+      python315
+      ## Go
+      go
+      ## C / C++
+      gcc
+      ## Javascript
+      nodejs_24
+      ## Rust
+      rustc
+      cargo
+    ] ++ (with pkgs-unstable; [
+      # Unstable packages
+      godot
+      blender
+    ]);
 }
