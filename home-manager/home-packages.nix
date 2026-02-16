@@ -12,6 +12,7 @@
 
       # Applications
       spotify
+      bitwarden-desktop
 
       # Browser
       firefox
