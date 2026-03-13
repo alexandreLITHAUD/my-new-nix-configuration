@@ -77,5 +77,6 @@
       # Unstable packages
       godot
       blender
+      vscode
     ]);
 }
