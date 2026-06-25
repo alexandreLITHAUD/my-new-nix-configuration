@@ -26,6 +26,7 @@
       meld
       lazygit
       gh
+      jujutsu
 
       # Kube
       kubectl
@@ -57,6 +58,8 @@
       yt-dlp
       fd
       devbox
+      cobra-cli
+      cloc
 
       # Virtualizer
       qemu
