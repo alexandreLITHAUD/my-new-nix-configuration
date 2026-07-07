@@ -63,6 +63,7 @@
 
       # Virtualizer
       qemu
+      docker-compose
 
       # Languages
       ## Python
