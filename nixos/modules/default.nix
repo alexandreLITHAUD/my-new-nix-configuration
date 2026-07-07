@@ -12,5 +12,6 @@
     ./timezone.nix
     ./user.nix
     ./x11-gnome.nix
+    ./virtualization.nix
   ];
 }
